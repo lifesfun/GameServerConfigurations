@@ -26,7 +26,7 @@
       "votekickplayer":true,
       "votingforceeventeams":true
     },
-    "pregamealltalk":false,
+    "pregamealltalk":true,
     "mod_backup_before_steam":false,
     "alltalk":false,
     "auto_kick_afk_time":300,
