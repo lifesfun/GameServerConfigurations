@@ -28,7 +28,7 @@ ip="$(grep pzserverip /home/srvCtl/srvInfo | cut -d" " -f2)"
 updateonstart="on"
 
 fn_parms(){
-parms=""
+parms=" -ip ${ip}"
 }
 
 #### Advanced Variables ####

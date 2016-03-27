@@ -19,8 +19,8 @@ emailnotification="on"
 email="$(grep email /home/srvCtl/srvInfo | cut -d" " -f2)"
 
 # Steam login
-steamuser="$(grep user /home/srvCtl/srvInfo | cut -d" " -f2)"
-steampass="$(grep pass /home/srvCtl/srvInfo | cut -d" " -f2)"
+steamuser="$(grep steamuser /home/srvCtl/srvInfo | cut -d" " -f2)"
+steampass="$(grep steampass /home/srvCtl/srvInfo | cut -d" " -f2)"
 
 # Start Variables
 defaultmap="ns2_tram"
@@ -28,14 +28,14 @@ port="27015"
 maxplayers="24"
 ip="$(grep ns2serverip /home/srvCtl/srvInfo | cut -d" " -f2)"
 updateonstart="on"
-servername="$(grep ns2serveruser /home/srvCtl/srvInfo | cut -d" " -f2)"
-webadminuser="$(grep ns2serverip /home/srvCtl/srvInfo | cut -d" " -f2)"
+servername="$(grep ns2servername /home/srvCtl/srvInfo | cut -d" " -f2)"
+webadminuser="$(grep ns2serveruser /home/srvCtl/srvInfo | cut -d" " -f2)"
 webadminpass="$(grep ns2serverpass /home/srvCtl/srvInfo | cut -d" " -f2)"
 webadminport="8080"
 configpath="server1"
 modstorage="server1/Workshop"
 srvIP="$(grep srvIP /home/srvCtl/srvInfo | cut -d" " -f2)"
-mods="$(grep ns2servermods /home/srvCtl/srvInfo | cut -d" " -f2)"
+mods=""
 password=""
 # Add the following line to the parms if you want a private server. Ensuring
 # that the password variable above is not left empty.
@@ -43,7 +43,7 @@ password=""
 
 # http://wiki.unknownworlds.com/ns2/Dedicated_Server
 fn_parms(){
-parms="-name \"${servername}\" -ip ${ip} -port ${port} -webadmin -webdomain ${srvIP} -webuser ${webadminuser} -webpassword \"${webadminpass}\" -webport ${webadminport} -map ${defaultmap} -limit ${maxplayers} -config_path \"${rootdir}/${configpath}\" -modstorage \"${rootdir}/${modstorage}\" -mods \"${mods}\""
+parms="-name \"${servername}\" -ip ${ip} -port ${port} -webadmin -webdomain ${ip} -webuser ${webadminuser} -webpassword \"${webadminpass}\" -webport ${webadminport} -map ${defaultmap} -limit ${maxplayers} -config_path \"${rootdir}/${configpath}\" -modstorage \"${rootdir}/${modstorage}\" -mods \"${mods}\""
 }
 
 #### Advanced Variables ####
